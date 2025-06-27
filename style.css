@@ -1,0 +1,220 @@
+/* General Body Styles */
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: linear-gradient(135deg, #932eff, #203559);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/* Container Styles */
+.container {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Header Styling */
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Board Styles */
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    grid-template-rows: repeat(3, 120px);
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-direction: column;
+}
+
+/* Individual Cells */
+.cell {
+    width: 120px;
+    height: 120px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    font-weight: bold;
+    color: #333;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cell:hover {
+    background-color: #f0f0f0;
+}
+
+.cell.taken {
+    pointer-events: none;
+    color: #555;
+}
+
+.winning-message {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    color: rgb(0, 0, 0);
+}
+
+/* Restart Button */
+button {
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+#Fboy_image{
+    width: auto;
+    height: 70%;
+}
+
+#Sboy_image{
+    width: auto;
+    height: 70%;
+}
+
+.First_Boy,.Second_Boy{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-bottom: 10px;
+    flex-direction: column;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.First_Boy p, .Second_Boy p{
+    background: linear-gradient(135deg, #932eff, #203559);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#PlayerO, #PlayerX{
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    font-weight: 495;
+    text-align: center;
+    color: black;
+    z-index: 10;
+}
+
+.First_Boy input:focus, .Second_Boy input:focus {
+    outline: 2px solid #932eff;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .board {
+        grid-template-columns: repeat(3, 100px);
+        grid-template-rows: repeat(3, 100px);
+    }
+
+    .cell {
+        width: 100px;
+        height: 100px;
+        font-size: 3rem;
+    }
+
+    .First_Boy, .Second_Boy {
+        font-size: 1.2rem;
+        padding: 10px;
+    }
+
+    #PlayerO, #PlayerX {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .winning-message {
+        font-size: 1.2rem;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 10px 18px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .board {
+        grid-template-columns: repeat(3, 80px);
+        grid-template-rows: repeat(3, 80px);
+    }
+
+    .cell {
+        width: 80px;
+        height: 80px;
+        font-size: 2.5rem;
+    }
+
+    .First_Boy, .Second_Boy {
+        font-size: 1rem;
+    }
+
+    #PlayerO, #PlayerX {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+
+    .winning-message {
+        font-size: 1rem;
+    }
+}
+
