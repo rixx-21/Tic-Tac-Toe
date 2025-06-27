@@ -6,13 +6,9 @@ let winner = [
     [0, 4, 8], [2, 4, 6]
 ];
 
-const board_array = new Array(9).fill("E"); // Initial board array all boxes are empty
-//   0.  1.  2.  3.  4.  5.  6.  7.  8
-// ["E","E","E","E","E","E","E","E","E"]
+const board_array = new Array(9).fill("E"); 
 
 function checkWinner() {
-    // for(let i of winner)
-    //         console.log(i);
     for (let [index0, index1, index2] of winner) {
         if (board_array[index0] != "E" && board_array[index0] === board_array[index1] && board_array[index1] === board_array[index2])
             return 1;
@@ -44,20 +40,15 @@ PlayerX.addEventListener('input', (event) => {
 
 const printer = (event) => {
     console.log(event);
-    console.log(event.target);
-    // console.log(event.target.id);
     const element = event.target;
-    // element.innerHTML = "O";
 
-    if (board_array[element.id] === "E") { // So we can't change the value of the box if it is already filled
+    if (board_array[element.id] === "E") { 
         total_turn++;
         if (turn === "O") {
             element.innerHTML = "O";
             board_array[element.id] = "O";
             if (checkWinner()) {
                 document.getElementById('winningMessage').innerHTML = `Winner is ${playerOName}`;
-                // Remove the event listener so that we can't click on the board after the game is over
-                // Board.removeEventListener('click', callbackFunction);
                 board.removeEventListener('click', printer);
                 return;
             }
@@ -95,14 +86,7 @@ board.addEventListener('click', printer);
 
 const Restart = document.getElementById("restartButton");
 Restart.addEventListener('click', () => {
-    // const cell = document.getElementsByClassName('cell');
-    // Array.from(cell).forEach((value) => {
-    //     value.innerHTML = "";
-    // })
-
     document.querySelectorAll('.cell').forEach((box) => box.innerHTML = "");
-
-    // board_array = new Array(9).fill("E");
     board_array.fill("E");
     total_turn = 0;
     turn = "O";
